@@ -1059,9 +1059,6 @@ footer{
 .social-media svg:hover{
     fill:white;
 }
-.change-photo:hover .change-photo:nth-of-type(even) {
-    display: block;
-}
 .footer-text{
     padding-bottom: 20px;
     max-width: 330px;
