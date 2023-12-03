@@ -323,12 +323,21 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     overflow: hidden;
     background-color: #3B3B3B;
 }
-.highlighted-NFT>img{
+.highlighted-NFT__img{
     width: clamp(315px, 40vw, 510px);
     height: clamp(206px, 27vw, 401px);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.highlighted-NFT__img img{
+    width: 510px;
+    height: 401px;
+    align-self: center;
 }
 .highlighted-NFT-avatar{
     padding: 19px 20px;
+    overflow: hidden;
 }
 
 @media screen and (max-width:1200px){
