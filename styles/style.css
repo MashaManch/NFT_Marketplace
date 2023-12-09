@@ -30,9 +30,6 @@ body{
         width: 315px;
     }
 }
-img, .avatar-icon{
-    cursor: pointer;
-}
 h1{
     color: rgba(255, 255, 255, 1);
     font-family: 'Work Sans', sans-serif;
@@ -122,6 +119,7 @@ h5{
     font-weight: 600;
     text-decoration: none;
     position: relative;
+    cursor: pointer;
 }
 .nav-menu__item a:after {
     display: block;
@@ -152,12 +150,14 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     display:flex;
     align-items: center;
     column-gap: 13px;
+    cursor: pointer;
 }
 .logo img:nth-child(2){
     padding-top:7px;
 }
 .logo-adaptive{
     display: none;
+    cursor: pointer;
 }
 .avatar-icon{
     display: flex;
@@ -360,7 +360,7 @@ h1, h2, h3, h4, h5, p, .button, .caption{
         padding: 19px 20px;
     }
 }
-@media screen and (max-width:800px){
+@media screen and (max-width:812px){
     .additional-info{
         gap: 30px;
     }
@@ -375,6 +375,7 @@ h1, h2, h3, h4, h5, p, .button, .caption{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
     .hero-text-section__text{
         padding-bottom: 40px;
@@ -429,16 +430,20 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     width: 330px;
 }
 .collection-card-squere{
-    padding: 33px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100px;
+    height: 100px;
     background-color: rgba(162, 89, 255, 1);
 }
 .collection-card>img:nth-child(1){
-    width: clamp(315px, 26vw, 330px);
-    height: clamp(315px, 26vw, 330px);
+    width: 330px;
+    height: 330px;
 }
 .collection-card>img:nth-child(n+2){
-    width:clamp(95px, 8vw, 100px);
-    height:clamp(95px, 8vw, 100px);
+    width:100px;
+    height:100px;
 }
 .avatar-icon img{
     width: 24px;
@@ -448,20 +453,16 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     .cards-row{
         justify-content: center;
     }
-    .collection-card:nth-child(n+3){
-        display: none;
+    .trending-collection .cards-row{
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+        justify-content: left;
     }
-}
-@media screen and (max-width:841px){
-    .collection-card:nth-child(n+2){
+    .cards-row::-webkit-scrollbar {
         display: none;
-    }
+      }
 }
 @media screen and (max-width:480px){
-    .collection-card-squere{
-        padding: 36px 23px;
-        background-color: rgba(162, 89, 255, 1);
-    }
     .trending-collection .headline{
         padding-left: 0px;
     }
@@ -470,6 +471,18 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     }
     .card{
         width:315px;
+    }
+    .collection-card>img:nth-child(1){
+        width: 315px;
+        height: 315px;
+    }
+    .collection-card>img:nth-child(n+2){
+        width:95px;
+        height:95px;
+    }
+    .collection-card-squere{
+        width:95px;
+        height: 95px;
     }
 }
 /* - - - - - top creators - - - - - */
@@ -590,6 +603,11 @@ h1, h2, h3, h4, h5, p, .button, .caption{
 }
 .browse-categories-card:hover img:nth-child(1){
     filter:blur(0px);
+}
+.browse-categories-card__img{
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 .browse-categories-card img:nth-child(2){
     position: absolute;
@@ -936,7 +954,7 @@ h1, h2, h3, h4, h5, p, .button, .caption{
         padding-bottom: 13px;
     }
 }
-/* - - - - - vsubscribe - - - - - */
+/* - - - - - subscribe - - - - - */
 .subscribe{
     padding: 40px 0px 80px 0px;
 }
@@ -956,7 +974,7 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     left: 214px;
     width: 211px;
 }
-.subscribe h3{
+.subscribe-info h3{
     padding-bottom:8px;
 }
 .subscribe-info p.body-text{
@@ -1014,12 +1032,20 @@ h1, h2, h3, h4, h5, p, .button, .caption{
 @media screen and (max-width:760px) {
     .subscribe-card{
         flex-direction: column;
+        align-items: center;
+    }
+    .subscribe .container{
+        max-width: 315px;
     }
     .subscribe .card{
         background: none;
     }
-}
-@media screen and (max-width:480px) {
+    .subscribe-info .email-button{
+        width: 100%;
+    }
+    .subscribe-info .email-form input{
+        width: 94%;
+    }
     .subscribe-card>img{
         padding-right: 0px;
         padding-left: 0px;
@@ -1030,12 +1056,8 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     .subscribe-info{
         padding-top:29px;
     }
-    .subscribe-info .email-button{
-        width: 100%;
-    }
-    .subscribe-info .email-form input{
-        width: 94%;
-    }
+}
+@media screen and (max-width:480px) {
     .subscribe{
         padding: 40px 0px;
     }
@@ -1044,6 +1066,9 @@ h1, h2, h3, h4, h5, p, .button, .caption{
 footer{
     padding:45px 0px; 
     background-color: rgba(59, 59, 59, 1);
+}
+.footer-logo{
+    cursor: pointer;
 }
 .footer-logo img:nth-child(2){
    padding-bottom: 6px;
@@ -1220,7 +1245,7 @@ footer .caption{
 }
 /* - - - - - error 404 - - - - - */
 .error{
-    padding-top:230px;
+    padding: 150px 0px;
 }
 .error h1{
     text-align: center;
@@ -1248,6 +1273,129 @@ footer .caption{
         line-height: 47px;
     }
     .error{
-        padding-top:286px;
+        padding-top:150px;
     }
+}
+@media screen and (max-width:375px) {
+    h1{
+        font-size: 26px;
+    }
+    h3{
+        font-size: 26px;
+    }
+    h4{
+        font-size: 20px;
+    }
+    h5{
+        font-size: 20px;
+    }
+    .caption{
+        font-size: 10px;
+    }
+    .avatar h5{
+        padding-bottom: 5px;
+    }
+    .additional-info{
+        gap:22px;
+    }
+    .additional-info__item:nth-child(3){
+        padding:0px;
+    }
+    .header-container{
+        max-width: 280px;
+    }
+    .container{
+        max-width: 250px;
+    }
+    .collection-card>img:nth-child(1){
+        width:250px;
+        height: 250px;
+    }
+    .collection-card>img:nth-child(n+2){
+        width: 73px;
+        height: 73px;
+    }
+    .collection-card-squere{
+        width: 73px;
+        height: 73px;
+    }
+    .highlighted-NFT{
+        height: 250px;
+        width: 250px;
+    }
+    .highlighted-NFT__img{
+        width: 250px;
+        height: 160px;
+    }
+    .highlighted-NFT-avatar{
+        padding:13px 20px;
+    }
+    .button, .discover-more .container>.button, .top-creators .container>.button{
+        width:250px;
+    }
+    .top-creators .avatar-icon{
+        flex-direction: column;
+    }
+    .browse-categories-card img:nth-child(2){
+        width: 60px;
+        height: 60px;
+        left:30%;
+        top:30%;
+    }
+    .browse-categories-card{
+        overflow: unset;
+    }
+    .browse-categories-row{
+        justify-content: left;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+    }
+    .discover-more-card>img{
+        width: 250px;
+        height: 180px;
+    }
+    .how-it-works-card:nth-child(2) {
+        height: 180px;
+    }
+    .time-numbers h3{
+        font-size: 24px;
+        padding-right: 0px;
+    }
+    .time-numbers{
+        column-gap: 8px;
+    }
+    .how-it-works-card{
+        width: 250px;
+        height: 200px;
+    }
+    .how-it-works-card>img{
+        width:73px;
+        height: 73px;
+    }
+    .how-it-works-card p{
+        font-size: 12px;
+        max-width: 120px;
+    }
+    .how-it-works h5{
+        padding-bottom: 5px;
+        max-width: 120px;
+        font-size: 14px;
+    }
+    .subscribe-card>img{
+        width: 250px;
+        height: 200px;
+    }
+    .subscribe-info{
+        max-width: 250px;
+    }
+    .footer-text{
+        max-width: 250px;
+    }
+    footer .email-form input{
+        width: 230px;
+        padding: 12px 0px 12px 20px;
+    } 
+    footer .email-button{
+        width: 250px;
+    } 
 }
