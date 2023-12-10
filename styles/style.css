@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+::-webkit-scrollbar {
+    width: 10px;
+}
 *{margin:0;}
 body{
     background-color: #2B2B2B;
@@ -240,6 +243,12 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     border:2px solid rgba(162, 89, 255, 1);
     cursor: pointer;
 }
+.header-logo img:nth-child(2){
+    padding-left: 7px;
+}
+.logo a{
+    text-decoration: none;
+}
 @media screen and (max-width:960px){
     .nav-menu, .header-button{
         display: none;
@@ -318,14 +327,14 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     padding-left: 10px;
 }
 .highlighted-NFT{
-    height: clamp(315px, 40vw, 510px);
-    width: clamp(315px, 40vw, 510px);
+    height: 510px;
+    width: 510px;
     overflow: hidden;
     background-color: #3B3B3B;
 }
 .highlighted-NFT__img{
-    width: clamp(315px, 40vw, 510px);
-    height: clamp(206px, 27vw, 401px);
+    width: 510px;
+    height: 401px;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -336,7 +345,7 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     align-self: center;
 }
 .highlighted-NFT-avatar{
-    padding: 19px 20px;
+    padding: 23px 20px;
     overflow: hidden;
 }
 
@@ -344,6 +353,14 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     .additional-info{
         gap: 44px;
         align-self: flex-start;
+    }
+    .highlighted-NFT{
+        height: clamp(315px, 40vw, 510px);
+        width: clamp(315px, 40vw, 510px);
+    }
+    .highlighted-NFT__img{
+        width: clamp(315px, 40vw, 510px);
+        height: clamp(206px, 27vw, 401px);
     }
 }
 @media screen and (max-width:960px){
@@ -590,7 +607,7 @@ h1, h2, h3, h4, h5, p, .button, .caption{
 }
 .browse-categories-card{
     background-color:rgba(59, 59, 59, 1);
-    width: clamp(148px, 18vw, 240px);
+    width: 240px;
     overflow: hidden;
 }
 .browse-categories-card h5{
@@ -598,8 +615,8 @@ h1, h2, h3, h4, h5, p, .button, .caption{
 }
 .browse-categories-card img:nth-child(1){
     filter: blur(10px);
-    width: clamp(148px, 18vw, 240px);
-    height: clamp(148px, 17vw, 240px);
+    width: 240px;
+    height: 240px;
 }
 .browse-categories-card:hover img:nth-child(1){
     filter:blur(0px);
@@ -619,8 +636,8 @@ h1, h2, h3, h4, h5, p, .button, .caption{
 .browse-categories-card__img{
     position: relative;
     overflow: hidden;
-    width: clamp(148px, 18vw, 240px);
-    height: clamp(148px, 17vw, 240px);
+    width: 240px;
+    height: 240px;
 }
 @media screen and (max-width:1200px){
     .browse-categories-card h5{
@@ -629,16 +646,29 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     .browse-categories-card img:nth-child(2){
         width: 80px;
         height: 80px;
-        left: 24%;
-        top: 22%;
+        left: 30%;
+        top: 35%;
+    }
+    .browse-categories-card{
+        width: clamp(148px, 18vw, 240px);
+    }
+    .browse-categories-card img:nth-child(1){
+        width: clamp(148px, 18vw, 240px);
+        height: clamp(148px, 17vw, 240px);
+    }
+    .browse-categories-card__img{
+        position: relative;
+        overflow: hidden;
+        width: clamp(148px, 18vw, 240px);
+        height: clamp(148px, 17vw, 240px);
     }
 }
-@media screen and (max-width:1008px){
+@media screen and (max-width:1032px){
     .browse-categories-card:nth-child(5) h5, .browse-categories-card:nth-child(6) h5, .browse-categories-card:nth-child(7) h5{
         padding-bottom:54px;
     }
 }
-@media screen and (max-width:960px){
+@media screen and (max-width:953px){
     .browse-categories-card h5, .how-it-works h5{
         font-size: 16px;
         line-height: 22px;
@@ -646,10 +676,14 @@ h1, h2, h3, h4, h5, p, .button, .caption{
     .browse-categories-card:nth-child(5) h5, .browse-categories-card:nth-child(6) h5, .browse-categories-card:nth-child(7) h5{
         padding-bottom:25px;
     }
-}
-@media screen and (max-width:933px){
     .browse-categories-card:nth-child(5) h5, .browse-categories-card:nth-child(6) h5, .browse-categories-card:nth-child(7) h5{
         padding-bottom:46px;
+    }
+    .browse-categories-card img:nth-child(2){
+        width: 60px;
+        height: 60px;
+        left:30%;
+        top:30%;
     }
 }
 @media screen and (max-width:811px){
@@ -1335,12 +1369,6 @@ footer .caption{
     }
     .top-creators .avatar-icon{
         flex-direction: column;
-    }
-    .browse-categories-card img:nth-child(2){
-        width: 60px;
-        height: 60px;
-        left:30%;
-        top:30%;
     }
     .browse-categories-card{
         overflow: unset;
